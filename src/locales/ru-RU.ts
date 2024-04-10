@@ -167,7 +167,7 @@ export default {
   "mSent": "Отправить",
   "findVersion": "Обнаружить обновленную версию",
   "yesLastVersion": "Уже последняя версия",
-  "infoStar": "Этот проект с открытым исходным кодом находится на <a class=\"text-blue-600 dark:text-blue-500\" href=\"https://api.kingdora.com/register?aff=BqDo\" target=\"_blank\">GitHub</a>, бесплатный и основан на лицензии MIT без каких-либо форм оплаты! </p><p>Если вы находите этот проект полезным, пожалуйста, добавьте звезду на GitHub, спасибо!",
+  "infoStar": "此项使用固定API调用，请移步 <a  class=\"text-blue-600 dark:text-blue-500\" href=\"https://api.kingdora.com/register?aff=BqDo\" target=\"_blank\"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ872110286，谢谢！",
   "setBtSaveChat": "Сохранить только чат",
   "setBtSaveSys": "Сохранить в систему",
 

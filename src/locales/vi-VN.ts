@@ -164,7 +164,7 @@ export default {
     "mSent": "Gửi",
     "findVersion": "Phát hiện phiên bản cập nhật",
     "yesLastVersion": "Đã là phiên bản mới nhất",
-    "infoStar": "Dự án này được mở nguồn tại <a class=\"text-blue-600 dark:text-blue-500\" href=\"https://api.kingdora.com/register?aff=BqDo\" target=\"_blank\">GitHub</a>, miễn phí và dựa trên giấy phép MIT mà không có bất kỳ hình thức thanh toán nào! </p><p>Nếu bạn thấy dự án này hữu ích, hãy cho nó một sao trên GitHub, cảm ơn bạn!",
+    "infoStar": "此项使用固定API调用，请移步 <a  class=\"text-blue-600 dark:text-blue-500\" href=\"https://api.kingdora.com/register?aff=BqDo\" target=\"_blank\"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ872110286，谢谢！",
     "setBtSaveChat": "Chỉ lưu trò chuyện",
     "setBtSaveSys": "Lưu vào hệ thống",
 

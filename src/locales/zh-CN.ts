@@ -99,7 +99,7 @@ export default {
     server:'服务端'
     ,about:'关于'
     ,model:'模型'
-    ,sysname:'AI绘图'
+    ,sysname:'AI助理'
   }
 
   ,mjtab:{
@@ -260,7 +260,7 @@ export default {
 
     ,findVersion:'发现更新版本'
     ,yesLastVersion:'已是最新版本'
-    ,infoStar:'此项目开源于 <a  class="text-blue-600 dark:text-blue-500" href="https://api.kingdora.com/register?aff=BqDo" target="_blank"> GitHub </a>，免费且基于 MIT 协议，没有任何形式的付费行为！ </p><p>如果你觉得此项目对你有帮助，请在 GitHub 帮我点个 Star，谢谢！'
+    ,infoStar:'此项使用固定API调用，请移步 <a  class="text-blue-600 dark:text-blue-500" href="https://api.kingdora.com/register?aff=BqDo" target="_blank"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ872110286，谢谢！'
     ,setBtSaveChat:'仅保存会话'
     ,setBtSaveSys: '保存至系统'
 

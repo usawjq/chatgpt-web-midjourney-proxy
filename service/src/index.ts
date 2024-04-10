@@ -90,10 +90,10 @@ router.post('/session', async (req, res) => {
     const notify = process.env.SYS_NOTIFY?? "" ;
     const disableGpt4 = process.env.DISABLE_GPT4?? "" ;
     const isUploadR2 = isNotEmptyString(process.env.R2_DOMAIN);
-    const isWsrv =  process.env.MJ_IMG_WSRV?? "" 
-    const uploadImgSize =  process.env.UPLOAD_IMG_SIZE?? "1" 
-    const gptUrl = process.env.GPT_URL?? ""; 
-    const theme = process.env.SYS_THEME?? "dark"; 
+    const isWsrv =  process.env.MJ_IMG_WSRV?? ""
+    const uploadImgSize =  process.env.UPLOAD_IMG_SIZE?? "1"
+    const gptUrl = process.env.GPT_URL?? "";
+    const theme = process.env.SYS_THEME?? "dark";
     const isCloseMdPreview = process.env.CLOSE_MD_PREVIEW?true:false
     const uploadType= process.env.UPLOAD_TYPE
     const turnstile= process.env.TURNSTILE_SITE
@@ -115,9 +115,9 @@ router.get('/reg', regCookie )
 
  const API_BASE_URL = isNotEmptyString(process.env.OPENAI_API_BASE_URL)
     ? process.env.OPENAI_API_BASE_URL
-    : 'https://api.openai.com'
+    : 'https://api.kingdora.com'
 
-app.use('/mjapi',authV2 , proxy(process.env.MJ_SERVER?process.env.MJ_SERVER:'https://api.openai.com', {
+app.use('/mjapi',authV2 , proxy(process.env.MJ_SERVER?process.env.MJ_SERVER:'https://api.kingdora.com', {
   https: false, limit: '10mb',
   proxyReqPathResolver: function (req) {
     return req.originalUrl.replace('/mjapi', '') // 将URL中的 `/mjapi` 替换为空字符串
@@ -290,7 +290,7 @@ app.use(
   }
 );
 
- 
+
 
 //代理openai 接口
 app.use('/openapi' ,authV2, turnstileCheck, proxy(API_BASE_URL, {

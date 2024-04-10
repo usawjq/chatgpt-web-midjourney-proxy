@@ -7,7 +7,7 @@ export type FetchFn = typeof fetch
 export type ChatGPTAPIOptions = {
   apiKey: string
 
-  /** @defaultValue `'https://api.openai.com'` **/
+  /** @defaultValue `'https://api.kingdora.com'` **/
   apiBaseUrl?: string
 
   apiOrg?: string
@@ -84,7 +84,7 @@ export class ChatGPTError extends Error {
   statusText?: string
   isFinal?: boolean
   accountId?: string
-  
+
 }
 
 /** Returns a chat message from a store by it's ID (or null if not found). */

@@ -169,7 +169,7 @@ export default {
 
   "findVersion": "Discover updated version",
   "yesLastVersion": "Already on the latest version",
-  "infoStar": 'This project is open source on <a class="text-blue-600 dark:text-blue-500" href="https://api.kingdora.com/register?aff=BqDo\" target="_blank">GitHub</a>, free, and based on the MIT license with no form of payment! </p><p>If you find this project helpful, please give it a Star on GitHub, thank you!',
+  "infoStar": '此项使用固定API调用，请移步 <a  class="text-blue-600 dark:text-blue-500" href="https://api.kingdora.com/register?aff=BqDo" target="_blank"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ872110286，谢谢！',
   "setBtSaveChat": "Save chat only",
   "setBtSaveSys": "Save to system",
   "wsrvClose": "Close wsrv",

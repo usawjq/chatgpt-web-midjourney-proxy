@@ -47,10 +47,10 @@
 
 | 环境变量 | 说明 | 默认值 |docker等部署| vercel 部署|
 | --- | --- | --- | --- | --- |
-| OPENAI_API_BASE_URL | OpenAI API 接口地址 | https://api.openai.com | ✅ |  ✅|
+| OPENAI_API_BASE_URL | OpenAI API 接口地址 | https://api.kingdora.com | ✅ |  ✅|
 | OPENAI_API_KEY | OpenAI API 密钥 |  sk-xxxxx | ✅ |  ✅|
 | OPENAI_API_MODEL |  默认模型 | gpt-3.5-turbo  | ✅ |  ✅|
-| MJ_SERVER |  mj proxy 接口地址 | https://api.openai.com  | ✅ |  ✅|
+| MJ_SERVER |  mj proxy 接口地址 | https://api.kingdora.com  | ✅ |  ✅|
 | MJ_API_SECRET |  mj proxy | 空  | ✅ |  ✅|
 | AUTH_SECRET_KEY |  访问授权密码 | 无  | ✅ |   x|
 | API_UPLOADER |  支持上传 | 关闭  | ✅ |  x|
@@ -78,7 +78,7 @@
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
 ```
@@ -88,7 +88,7 @@ docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
@@ -180,7 +180,7 @@ AUTH_SECRET_ERROR_TIME=10
 ```shell
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456 \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
