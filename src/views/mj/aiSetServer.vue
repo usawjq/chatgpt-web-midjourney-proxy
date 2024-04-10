@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NInput, NButton, useMessage,NSwitch} from "naive-ui"
- 
+
 import {gptServerStore} from '@/store'
 import { mlog, myTrim,blurClean} from "@/api";
 import { t } from '@/locales'
@@ -22,14 +22,14 @@ const save = ()=>{
 // }
 </script>
 <template>
-<div id="setserver"> 
+<div id="setserver">
 <div class="text-right">{{ $t('mj.setOpen') }}</div>
 <section class="mb-4 flex justify-between items-center"  >
-    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.OPENAI_API_BASE_URL" clearable>
-      <template #prefix>
-        <span class="text-[var(--n-tab-text-color-active)]">{{ $t('mj.setOpenUrl') }}:</span>
-      </template>
-    </n-input>
+<!--    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.OPENAI_API_BASE_URL" clearable>-->
+<!--      <template #prefix>-->
+<!--        <span class="text-[var(&#45;&#45;n-tab-text-color-active)]">{{ $t('mj.setOpenUrl') }}:</span>-->
+<!--      </template>-->
+<!--    </n-input>-->
  </section>
 
 <section class="mb-4 flex justify-between items-center"  >
@@ -43,11 +43,11 @@ const save = ()=>{
 
 <div  class="text-right" >{{$t('mj.setMj')}}</div>
 <section class="mb-4 flex justify-between items-center"  >
-    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  v-model:value="gptServerStore.myData.MJ_SERVER" clearable>
-      <template #prefix>
-        <span class="text-[var(--n-tab-text-color-active)]">{{$t('mj.setMjUrl')}}</span>
-      </template>
-    </n-input>
+<!--    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  v-model:value="gptServerStore.myData.MJ_SERVER" clearable>-->
+<!--      <template #prefix>-->
+<!--        <span class="text-[var(&#45;&#45;n-tab-text-color-active)]">{{$t('mj.setMjUrl')}}</span>-->
+<!--      </template>-->
+<!--    </n-input>-->
  </section>
 
 <section class="mb-4 flex justify-between items-center"  >

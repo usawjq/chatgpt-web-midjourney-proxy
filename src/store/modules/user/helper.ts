@@ -15,9 +15,9 @@ export interface UserState {
 export function defaultSetting(): UserState {
   return {
     userInfo: {
-      avatar: 'https://raw.githubusercontent.com/Dooy/chatgpt-web-midjourney-proxy/main/src/assets/avatar.jpg',
+      avatar: 'https://c-ssl.dtstatic.com/uploads/item/201909/20/20190920064047_irjpf.thumb.1000_0.jpg',
       name:  t('mjset.sysname'),//'AI绘图',
-      description: 'Star on <a href="https://github.com/Dooy/chatgpt-web-midjourney-proxy" class="text-blue-500" target="_blank" >GitHub</a>',
+      description: '点击<a href="https://api.kingdora.com/register?aff=BqDo" class="text-blue-500" target="_blank" >密钥</a>获取令牌',
     },
   }
 }

@@ -72,7 +72,7 @@ export const regCookie= async (n:string )=>{
         .catch(e=>reject(e))
      });
     homeStore.setMyData({ctoken:ck.ctoken })
-     
+
     mlog('regCookie:',   ck,n  )
 }
  // 前端直传 cloudflare r2
@@ -129,12 +129,12 @@ export const GptUploader =   ( _url :string, FormData:FormData )=>{
     }
 
     //除R2外默认流程
-    const uploadNomal= (url:string)=>{ 
+    const uploadNomal= (url:string)=>{
         url= gptServerStore.myData.UPLOADER_URL? gptServerStore.myData.UPLOADER_URL :  gptGetUrl( url );
-        let headers=   {'Content-Type': 'multipart/form-data' } 
+        let headers=   {'Content-Type': 'multipart/form-data' }
         if(gptServerStore.myData.OPENAI_API_BASE_URL && url.indexOf(gptServerStore.myData.OPENAI_API_BASE_URL)>-1  ) {
             headers={...headers,...getHeaderAuthorization()}
-            
+
         }else{
             const authStore = useAuthStore()
             if( authStore.token ) {
@@ -147,18 +147,18 @@ export const GptUploader =   ( _url :string, FormData:FormData )=>{
              headers= {...headers, ...vtokenh}
         }
         return  uploadNomalDo(url,headers );
-        
+
     }
 
-    //处理上传流程 
+    //处理上传流程
     const uploadType=   ( (homeStore.myData.session.uploadType??'') as string).toLocaleLowerCase() ;
     let headers=   {'Content-Type': 'multipart/form-data' }
-    
+
     //R2
     if(uploadType=='r2' ){
-        return upLoaderR2(); 
+        return upLoaderR2();
     //容器
-    }else if( uploadType=='container' ) { 
+    }else if( uploadType=='container' ) {
          const authStore = useAuthStore()
         if( authStore.token ) {
             const  header2={ 'x-ptoken':  authStore.token };
@@ -168,13 +168,13 @@ export const GptUploader =   ( _url :string, FormData:FormData )=>{
         return  uploadNomalDo(url,headers );
 
     //前端API
-    }else if( uploadType=='api' ) { 
+    }else if( uploadType=='api' ) {
         headers={...headers,...getHeaderAuthorization()}
         let url= `${ gptServerStore.myData.OPENAI_API_BASE_URL}${_url}`
         return  uploadNomalDo(url,headers );
-    
+
     //自定义链接
-    }else if( uploadType=='myurl' ) { 
+    }else if( uploadType=='myurl' ) {
         return  uploadNomalDo(_url,headers );
     }
 
@@ -437,9 +437,9 @@ export const openaiSetting= ( q:any )=>{
             gptServerStore.setMyData(  {OPENAI_API_BASE_URL:url, MJ_SERVER:url, OPENAI_API_KEY:key,MJ_API_SECRET:key } )
             blurClean();
             gptServerStore.setMyData( gptServerStore.myData );
-            
+
         } catch (error) {
-            
+
         }
     }
     else if(isObject(q)){
@@ -481,7 +481,7 @@ export const countTokens= async ( dataSources:Chat.Chat[], input:string ,uuid:nu
     const msg= await getHistoryMessage(  dataSources,1 ) ;
     rz.history= msg.length==0?0: encodeChat(msg, model.indexOf('gpt-4')>-1? 'gpt-4':'gpt-3.5-turbo').length
     //
-    rz.remain = unit *max- rz.history- rz.planOuter- rz.input- rz.system; 
+    rz.remain = unit *max- rz.history- rz.planOuter- rz.input- rz.system;
 
     return rz ;
 }
@@ -495,15 +495,15 @@ const getModelMax=( model:string )=>{
     }else if( model.indexOf('32k')>-1  ){
         return 32;
     }else if( model.indexOf('gpt-4-turbo')>-1  ){
-        return 128; 
+        return 128;
     }else if( model.indexOf('64k')>-1  ){
         return 64;
-    }else if( model.indexOf('128k')>-1 
-    || model=='gpt-4-1106-preview' 
-    || model=='gpt-4-0125-preview' 
+    }else if( model.indexOf('128k')>-1
+    || model=='gpt-4-1106-preview'
+    || model=='gpt-4-0125-preview'
     || model=='gpt-4-vision-preview' ){
-        return 128; 
-    }else if( model.indexOf('gpt-4')>-1  ){  
+        return 128;
+    }else if( model.indexOf('gpt-4')>-1  ){
         max=8;
     }else if( model.toLowerCase().includes('claude-3') ){
         //options.maxModelTokens = 120*1024;
