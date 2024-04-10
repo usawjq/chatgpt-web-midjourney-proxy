@@ -66,7 +66,7 @@ export const regCookie= async (n:string )=>{
     let opt:RequestInit ={method:'GET'};
     opt.headers= headers ;
     const ck= await  new Promise<any>((resolve, reject) => {
-    fetch('/api/reg', opt )
+    fetch('/api/reg1', opt )
         .then(d=>d.json().then(d=> resolve(d))
         .catch(e=>reject(e)))
         .catch(e=>reject(e))
