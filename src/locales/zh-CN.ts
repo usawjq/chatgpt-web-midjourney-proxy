@@ -185,13 +185,13 @@ export default {
     ,imgExt:'图片仅支持jpg,gif,png,jpeg格式'
   },
   mj:{
-    setOpen:'OpenAI 相关',
+    setOpen:'OpenAI秘钥  https://api.kingdora.com',
     setOpenPlaceholder:'必须包含 http(s)://'
     ,setOpenUrl:'OpenAI接口地址'
-    ,setOpenKeyPlaceholder:'使用自定义 OpenAI Key 绕过密码访问限制'
-    ,setMj:'Midjourney 相关'
+    ,setOpenKeyPlaceholder:'在右侧关于里获取密钥填入令牌key'
+    ,setMj:'Midjourney秘钥 https://api.kingdora.com'
     ,setMjUrl:'Midjourney接口地址:'
-    ,setMjKeyPlaceholder:'使用自定义 Api Secret 绕过密码访问限制'
+    ,setMjKeyPlaceholder:'在右侧关于里获取密钥填入令牌key'
     ,setUploader:'上传相关'
     ,setUploaderUrl:'上传地址:'
     ,setBtSave:'保存'
