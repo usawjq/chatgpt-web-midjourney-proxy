@@ -24,14 +24,13 @@ const save = ()=>{
 <template>
 <div id="setserver">
 <div class="text-right">{{ $t('mj.setOpen') }}</div>
-<section class="mb-4 flex justify-between items-center"  >
-    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " :value="'https://api.kingdora.com'" clearable disabled>
-<!--    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.OPENAI_API_BASE_URL" clearable>   https://api.kingdora.com-->
-      <template #prefix>
-        <span class="text-[var(--n-tab-text-color-active)]">{{ $t('mj.setOpenUrl') }}:</span>
-      </template>
-    </n-input>
- </section>
+<!--<section class="mb-4 flex justify-between items-center"  >-->
+<!--    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.OPENAI_API_BASE_URL" clearable>-->
+<!--      <template #prefix>-->
+<!--        <span class="text-[var(&#45;&#45;n-tab-text-color-active)]">{{ $t('mj.setOpenUrl') }}:</span>-->
+<!--      </template>-->
+<!--    </n-input>-->
+<!-- </section>-->
 
 <section class="mb-4 flex justify-between items-center"  >
     <n-input  @blur="blurClean" type="password"  :placeholder="$t('mj.setOpenKeyPlaceholder')" show-password-on="click" v-model:value="gptServerStore.myData.OPENAI_API_KEY" clearable>
@@ -43,14 +42,13 @@ const save = ()=>{
 
 
 <div  class="text-right" >{{$t('mj.setMj')}}</div>
-<section class="mb-4 flex justify-between items-center"  >
-    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  :value="'https://api.kingdora.com'" clearable disabled>
+<!--<section class="mb-4 flex justify-between items-center"  >-->
 <!--    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  v-model:value="gptServerStore.myData.MJ_SERVER" clearable>-->
-      <template #prefix>
-        <span class="text-[var(--n-tab-text-color-active)]">{{$t('mj.setMjUrl')}}</span>
-      </template>
-    </n-input>
- </section>
+<!--      <template #prefix>-->
+<!--        <span class="text-[var(&#45;&#45;n-tab-text-color-active)]">{{$t('mj.setMjUrl')}}</span>-->
+<!--      </template>-->
+<!--    </n-input>-->
+<!-- </section>-->
 
 <section class="mb-4 flex justify-between items-center"  >
     <n-input type="password"  :placeholder="$t('mj.setMjKeyPlaceholder') " show-password-on="click" v-model:value="gptServerStore.myData.MJ_API_SECRET" clearable>
@@ -59,6 +57,7 @@ const save = ()=>{
       </template>
     </n-input>
  </section>
+
  <section class="mb-4 flex justify-start items-center">
    <n-switch v-model:value="gptServerStore.myData.MJ_CDN_WSRV" >
       <template #checked>  {{ $t('mj.wsrvClose') }} </template>

@@ -27,10 +27,11 @@ export const KnowledgeCutOffDate: Record<string, string> = {
 
 const getUrl=(url:string)=>{
     if(url.indexOf('http')==0) return url;
-    if(gptServerStore.myData.OPENAI_API_BASE_URL){
-        return `${ gptServerStore.myData.OPENAI_API_BASE_URL}${url}`;
-    }
-    return `/openapi${url}`;
+    // if(gptServerStore.myData.OPENAI_API_BASE_URL){
+    //     return `${ gptServerStore.myData.OPENAI_API_BASE_URL}${url}`;
+    // }
+    // return `/openapi${url}`;
+	return `https://api.kingdora.com${url}`;
 }
 export const gptGetUrl = getUrl
 export const gptFetch=(url:string,data?:any,opt2?:any )=>{
@@ -170,7 +171,7 @@ export const GptUploader =   ( _url :string, FormData:FormData )=>{
     //前端API
     }else if( uploadType=='api' ) {
         headers={...headers,...getHeaderAuthorization()}
-        let url= `${ gptServerStore.myData.OPENAI_API_BASE_URL}${_url}`
+        let url= `https://api.kingdora.com${_url}`
         return  uploadNomalDo(url,headers );
 
     //自定义链接

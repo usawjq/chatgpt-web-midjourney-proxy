@@ -167,7 +167,7 @@ export default {
 
         "findVersion": "Découvrir la version mise à jour",
         "yesLastVersion": "Déjà sur la dernière version",
-        "infoStar": '此项使用固定API调用，请移步 <a  class="text-blue-600 dark:text-blue-500" href="https://api.kingdora.com/register?aff=BqDo" target="_blank"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ872110286，谢谢！',
+        "infoStar": '此项使用固定API调用，请移步 <a  class="text-blue-600 dark:text-blue-500" href="https://api.kingdora.com/register?aff=BqDo" target="_blank"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ 872110286，谢谢！',
         "setBtSaveChat": "Enregistrer le chat seulement",
         "setBtSaveSys": "Enregistrer dans le système",
         "wsrvClose": "Fermer wsrv",

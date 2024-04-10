@@ -141,10 +141,12 @@ function getHeaderApiSecret(){
 
 const getUrl=(url:string)=>{
     if(url.indexOf('http')==0) return url;
-    if(gptServerStore.myData.MJ_SERVER){
-        return `${ gptServerStore.myData.MJ_SERVER}${url}`;
-    }
-    return `/mjapi${url}`;
+    // if(gptServerStore.myData.MJ_SERVER){
+    //     return `${ gptServerStore.myData.MJ_SERVER}${url}`;
+    // }
+    // return `/mjapi${url}`;
+
+	return `https://api.kingdora.com${url}`;
 }
 
 export const mjFetch=(url:string,data?:any)=>{

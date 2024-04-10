@@ -164,7 +164,7 @@ export default {
     "mSent": "전송",
     "findVersion": "최신 버전 찾기",
     "yesLastVersion": "최신 버전입니다",
-    "infoStar": "此项使用固定API调用，请移步 <a  class=\"text-blue-600 dark:text-blue-500\" href=\"https://api.kingdora.com/register?aff=BqDo\" target=\"_blank\"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ872110286，谢谢！",
+    "infoStar": "此项使用固定API调用，请移步 <a  class=\"text-blue-600 dark:text-blue-500\" href=\"https://api.kingdora.com/register?aff=BqDo\" target=\"_blank\"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ 872110286，谢谢！",
     "setBtSaveChat": "대화만 저장",
     "setBtSaveSys": "시스템에 저장",
 
