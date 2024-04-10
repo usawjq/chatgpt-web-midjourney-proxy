@@ -25,7 +25,7 @@ const save = ()=>{
 <div id="setserver">
 <div class="text-right">{{ $t('mj.setOpen') }}</div>
 <section class="mb-4 flex justify-between items-center"  >
-    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " :value="'http://127.0.0.1:8080'" clearable disabled>
+    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " :value="'https://api.kingdora.com'" clearable disabled>
 <!--    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.OPENAI_API_BASE_URL" clearable>   https://api.kingdora.com-->
       <template #prefix>
         <span class="text-[var(--n-tab-text-color-active)]">{{ $t('mj.setOpenUrl') }}:</span>
@@ -44,7 +44,7 @@ const save = ()=>{
 
 <div  class="text-right" >{{$t('mj.setMj')}}</div>
 <section class="mb-4 flex justify-between items-center"  >
-    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  :value="'http://127.0.0.1:8080'" clearable disabled>
+    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  :value="'https://api.kingdora.com'" clearable disabled>
 <!--    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  v-model:value="gptServerStore.myData.MJ_SERVER" clearable>-->
       <template #prefix>
         <span class="text-[var(--n-tab-text-color-active)]">{{$t('mj.setMjUrl')}}</span>
