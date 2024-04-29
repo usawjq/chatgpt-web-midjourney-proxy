@@ -402,7 +402,7 @@ export default {
     ,menu:'音乐'
     ,menuinfo:'Suno 音乐创作'
     ,server:'Suno 接口地址'
-    ,serverabout:'Suno 相关'
+    ,serverabout:'Suno 秘钥 https://api.kingdora.com'
     ,setOpenKeyPlaceholder:'Suno API 的相关KEY；可不填'
   }
 

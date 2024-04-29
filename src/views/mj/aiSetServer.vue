@@ -42,13 +42,13 @@ const save = ()=>{
 
 
 <div  class="text-right" >{{$t('mj.setMj')}}</div>
-<!--<section class="mb-4 flex justify-between items-center"  >-->
-<!--    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  v-model:value="gptServerStore.myData.MJ_SERVER" clearable>-->
-<!--      <template #prefix>-->
-<!--        <span class="text-[var(&#45;&#45;n-tab-text-color-active)]">{{$t('mj.setMjUrl')}}</span>-->
-<!--      </template>-->
-<!--    </n-input>-->
-<!-- </section>-->
+<section class="mb-4 flex justify-between items-center"  >
+    <n-input    :placeholder="$t('mj.setOpenPlaceholder') "  v-model:value="gptServerStore.myData.MJ_SERVER" clearable>
+      <template #prefix>
+        <span class="text-[var(--n-tab-text-color-active)]">{{$t('mj.setMjUrl')}}</span>
+      </template>
+    </n-input>
+ </section>
 
 <section class="mb-4 flex justify-between items-center"  >
     <n-input type="password"  :placeholder="$t('mj.setMjKeyPlaceholder') " show-password-on="click" v-model:value="gptServerStore.myData.MJ_API_SECRET" clearable>
@@ -69,11 +69,11 @@ const save = ()=>{
 
  <div class="text-right">{{$t('suno.serverabout')}}</div>
 <section class="mb-4 flex justify-between items-center"  >
-    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.SUNO_SERVER" clearable>
-      <template #prefix>
-        <span class="text-[var(--n-tab-text-color-active)]">{{$t('suno.server')}}:</span>
-      </template>
-    </n-input>
+<!--    <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.SUNO_SERVER" clearable>-->
+<!--      <template #prefix>-->
+<!--        <span class="text-[var(&#45;&#45;n-tab-text-color-active)]">{{$t('suno.server')}}:</span>-->
+<!--      </template>-->
+<!--    </n-input>-->
  </section>
 
 <section class="mb-4 flex justify-between items-center"  >
