@@ -1,17 +1,12 @@
 # ChatGPT Web Midjourney Proxy
-
-[English](./README_EN.md) | [Русский язык](./README_RU.md) | [Français](./README_FR.md) | [한국어](./README_KR.md) | [Tiếng Việt](./README_VN.md) | [Türkçe](./README_TR.md)
-
-## 声明
+💡**声明**
 - 此项目只发布于 GitHub，基于 MIT 协议，免费且作为开源学习使用。并且不会有任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
-- 本开源是在 [ChenZhaoYu](https://github.com/Chanzhaoyu/chatgpt-web) 基础上做二次开发 ；使用 [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 、 [Suno-API](https://github.com/SunoAI-API/Suno-API)、[Luma-API](https://github.com/LumaAI-API/Luma-API)  作为后端API而形成的；
-- 可以直接用 https://vercel.ddaiai.com 先体验
+- 本开源是在 [ChenZhaoYu](https://github.com/Chanzhaoyu/chatgpt-web) 基础上做二次开发 ；使用 [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 提供的midjourney api和 [Suno-API](https://github.com/SunoAI-API/Suno-API)  作为后端而形成的；
+
 
 ![cover](./docs/mj2a1.jpg)
 ## 支持功能 
-- [x] 支持 luma 文生视频，图生视频
 - [x] 支持 suno 单独模块，可歌词调整 曲风调整
-- [x] 支持 suno 以音频生成音频
 - [x] 原chatgpt web 所有功能
 - [x] chatgpt web 支持自定义api key、base_url
 - [x] midjourney 文生图
@@ -79,12 +74,10 @@
 | AUTH_SECRET_ERROR_TIME | 防爆破验证：停留时间 单位分钟  | 无  | ✅ |  x|
 | CLOSE_MD_PREVIEW | 是否不关闭输入预览 | 无  | ✅ |  ✅|
 | UPLOAD_TYPE | 指定上传方式 [`R2` R2上传] [`API` 跟随UI前端中转]、[`Container` 本地容器]、[`MyUrl` 自定义链接]  |  空 | ✅ |  x|
-| MENU_DISABLE  | 菜单禁用 可选:gpts,draws,gallery,music,video |  空 | ✅ |  ✅|
+| MENU_DISABLE  | 菜单禁用 可选:gpts,draws,gallery,music |  空 | ✅ |  ✅|
 | VISION_MODEL  | 默认使用的识图 可选:`gpt-4o`,`gpt-4-turb`,`gpt-4-vision-preview`等 |  空 | ✅ |  ✅|
 | SYSTEM_MESSAGE  | 自定义默认角色消息 |  空 | ✅ |  ✅|
 | CUSTOM_VISION_MODELS  | 自定义可视图模型 用`,` 分开 |  空 | ✅ |  ✅|
-| LUMA_SERVER |  LUMA API 接口地址  | [搭建参考](https://github.com/LumaAI-API/Luma-API) | ✅ |  ✅|
-| LUMA_KEY |  LUMA API 的key | 空  | ✅ |  ✅|
 
   
 
@@ -92,7 +85,6 @@
  
 > - [x] 需 [midjourney-proxy](https://github.com/novicezk/midjourney-proxy)   支持
 > - [x] 需 [Suno-API](https://github.com/SunoAI-API/Suno-API)  支持
-> - [x] 需 [Luma-API](https://github.com/LumaAI-API/Luma-API)  支持
 
 
 ```bash
@@ -101,8 +93,6 @@ docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_BASE_URL=https://api.openai.com  \
 -e MJ_SERVER=https://your-mj-server:6013  \
 -e MJ_API_SECRET=your-mj-api-secret  \
--e LUMA_SERVER=https://your-luma-server:8000  \
--e LUMA_KEY=your-luma-key  \
 -e SUNO_SERVER=https://your-suno-server:8000  \
 -e SUNO_KEY=you-suno-key  ydlhero/chatgpt-web-midjourney-proxy
 ```

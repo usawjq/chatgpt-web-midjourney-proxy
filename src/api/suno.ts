@@ -67,7 +67,7 @@ export const FeedTask= async (ids:string[])=>{
     mlog('FeedTask',d )
     d.forEach( (item:SunoMedia) =>{
          sunoS.save( item)
-        if(item.status== "complete"){
+        if(item.status== "complete" || item.status== "error" ){
             ids= ids.filter(v=>v!=item.id )
         }
     });
@@ -98,11 +98,17 @@ export const sunoFetch=(url:string,data?:any,opt2?:any )=>{
             opt.method='POST';
         }
         fetch(getUrl(url),  opt )
-        .then( d=>{
+        .then( async (d) =>{
             if (!d.ok) { 
-                 homeStore.myData.ms &&  homeStore.myData.ms.error('发生错误: '+ d.status )
-                throw new Error('服务器返回错误： ' + d.status);
+                let msg = '发生错误: '+ d.status
+                try{ 
+                  let bjson:any  = await d.json();
+                  msg = '('+ d.status+')发生错误: '+(bjson?.error?.message??'' ) 
+                }catch( e ){ 
                 }
+                homeStore.myData.ms &&  homeStore.myData.ms.error(msg )
+                throw new Error( msg );
+            }
      
             d.json().then(d=> resolve(d)).catch(e=>{ 
             

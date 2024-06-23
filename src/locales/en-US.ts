@@ -191,6 +191,11 @@ export default {
   "micAsr": "Instant recognition",
   "micRec": "Start recording, please speak! It will automatically stop if there is no sound for 2 seconds.",
   "micRecEnd": "Recording has ended"
+
+  ,subtle: 'High definition 2x'
+  ,creative: 'High definition 2x. Creative'
+  ,gpt_gx: 'GPTs use g-*'
+
   },
   "mjset": {
     "server": "Server",
@@ -279,6 +284,12 @@ export default {
     "add2more": "Please add two or more images",
     "no1m": "Image size cannot exceed 1M",
     "imgExt": "Images support only jpg, gif, png, jpeg formats"
+    ,"setSync": "Synchronize Midjourney and Suno"
+
+    ,"addGPTS": "Add GPTs",
+    "addPlaceholder": "Paste the GID of the GPTs here or directly paste the link of the GPTs",
+    "gidError": "Valid GID not found, please fill in again",
+    "success3": "GPTs added successfully!"
   },
 
 	draw: {
@@ -396,6 +407,29 @@ export default {
     "server": "Suno API Endpoint",
     "serverabout": "Suno Related",
     "setOpenKeyPlaceholder": "Related KEY for Suno API; optional"
+
+    ,upMps:'Upload'
+    ,extend:'Extend'
+    ,extendFrom:'Extend From'
+    ,extendAt:'Extend at'
+    ,fail:'Fail'
+    ,info:'Note: <br> Uploaded audio must be between 6 seconds and 60 seconds in duration.'
+  }
+   ,video: {
+    menu: "Videos",
+    menuinfo: "Luam and other video generate",
+    descpls: "Video generate description",
+    lumaabout: "Luma 秘钥 https://api.kingdora.com",
+    lumaserver: "Luma API endpoint",
+    setOpenKeyPlaceholder: "Key for Luma API, optional",
+    generate: "Generate video",
+    nodata: "No available videos, please generate first!",
+    selectimg: "Select image",
+    clear: "Clear",
+    plsInput: "Please input content!",
+    submitSuccess: "Submitted successfully!",
+    process: "Video generating...",
+    repeat: "Get again"
   }
 
 

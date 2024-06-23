@@ -183,22 +183,27 @@ export default {
     ,add2more:'请添加两张以上图片'
     ,no1m:'图片大小不能超过{m}M'
     ,imgExt:'图片仅支持jpg,gif,png,jpeg格式'
+    ,setSync:'同步Midjourney、Suno设置'
+
+    ,addGPTS:'新增GPTs'
+    ,addPlaceholder:'将GPTs的gid贴这儿 也可直接贴gpts的链接'
+    ,gidError:'未找到有效的gid，请重新填写'
+    ,success3:'新增GPTs成功！'
+
   },
   mj:{
     setOpen:'OpenAI秘钥  https://api.kingdora.com',
     setOpenPlaceholder:'必须包含 http(s)://'
     ,setOpenUrl:'OpenAI接口地址'
-    ,setOpenKeyPlaceholder:'在右侧关于里获取密钥填入令牌key'
+    ,setOpenKeyPlaceholder:'在右侧关于里获取密钥填入令牌key,下面key都一样'
     ,setMj:'Midjourney秘钥 https://api.kingdora.com'
     ,setMjUrl:'Midjourney接口地址:'
-    ,setMjKeyPlaceholder:'在右侧关于里获取密钥填入令牌key'
+    ,setMjKeyPlaceholder:'Midjourney key,同上'
     ,setUploader:'上传相关'
     ,setUploaderUrl:'上传地址:'
     ,setBtSave:'保存'
     ,setBtBack:'恢复默认'
-
-    ,
-    redraw:'局部重绘'
+    ,redraw:'局部重绘'
     ,fail1:'客官不要太急嘛，正在加载呢'
     ,success1:'图片刷新成功！'
     ,high_variation:'强变化'
@@ -206,16 +211,14 @@ export default {
     ,p15:'变焦1.5倍'
     ,p20:'变焦2倍'
     ,p100:'方正'
-
     ,retry:'重分析'
     ,pan_left:'向左'
     ,pan_right:'向右'
     ,pan_up:'向上'
     ,pan_down:'向下'
     ,up2:'高清2倍'
-    ,up4:'高清4倍',
-
-    thinking:'思考中...'
+    ,up4:'高清4倍'
+		,thinking:'思考中...'
     ,noReUpload:'不能重复上传'
     ,uploading:'上传中...'
     ,uploadSuccess:'上传成功'
@@ -225,21 +228,17 @@ export default {
     ,clearAll:'清参数'
     ,czoom:'自定义'
     ,customTitle:'自定义变焦'
-    ,zoominfo:'修改zoom值,范围在 1.0~2.0 默认设置为1.8',
-
-    modleSuccess:'模型加载成功'
+    ,zoominfo:'修改zoom值,范围在 1.0~2.0 默认设置为1.8'
+		,modleSuccess:'模型加载成功'
     ,setingSuccess:'设置成功'
-
     ,tokenInfo1:'剩余Tokens = 模型长度 - 角色设定 - 上下文(会话历史) - 回复数 - 当前输入'
     ,tokenInfo2:'角色设定留空，系统会给一个默认的'
     ,noSuppertModel:'刷新，暂不支持此模型！'
     ,failOcr:'识别失败'
     ,remain:'剩:'
-
     ,totalUsage:'订阅总额'
     ,disableGpt4:'已禁用GPT4'
     ,setTextInfo:'OpenAi Api Key 错误，点击这里重新'
-
     ,attr1:'附'
     ,ulink:'原图链接'
     ,copyFail:'复制失败'
@@ -257,16 +256,13 @@ export default {
     ,mPlay:'播放'
     ,mCanel:'取消'
     ,mSent:'发送'
-
     ,findVersion:'发现更新版本'
     ,yesLastVersion:'已是最新版本'
     ,infoStar:'此项使用固定API调用，请移步 <a  class="text-blue-600 dark:text-blue-500" href="https://api.kingdora.com/register?aff=BqDo" target="_blank"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ 872110286，谢谢！'
     ,setBtSaveChat:'仅保存会话'
     ,setBtSaveSys: '保存至系统'
-
     ,wsrvClose:'关闭 wsrv'
     ,wsrvOpen:'开启 wsrv'
-
     ,temperature:'随机性'
     ,temperatureInfo:'(temperature)值越大，回复越随机'
     ,top_p:'核采样'
@@ -275,18 +271,17 @@ export default {
     ,presence_penaltyInfo:'(presence_penalty)值越大，越有可能扩展到新话题'
     ,frequency_penalty:'频率惩罚度'
     ,frequency_penaltyInfo:' (frequency_penalty)值越大，越有可能降低重复字词'
-
     ,tts_voice:'TTS 语音人物'
     ,typing:'正在输入'
-
     ,authErro:'授权失败'
     ,authBt:'请重新输入授权访问密码'
-
     ,micWhisper:'Whisper语音识别'
     ,micAsr:'即时识别'
     ,micRec:'开始录音,请说话！2秒内无声音将自动关闭'
     ,micRecEnd:'录音已结束'
-
+    ,subtle:'高清2倍'
+    ,creative:'高清2倍.创意'
+    ,gpt_gx:'GPTs用g-*'
   },
 
 	draw: {
@@ -403,7 +398,30 @@ export default {
     ,menuinfo:'Suno 音乐创作'
     ,server:'Suno 接口地址'
     ,serverabout:'Suno 秘钥 https://api.kingdora.com'
-    ,setOpenKeyPlaceholder:'Suno API 的相关KEY；可不填'
+    ,setOpenKeyPlaceholder:'Suno API 的相关KEY；同上'
+
+    ,upMps:'上传音频'
+    ,extend:'延伸'
+    ,extendFrom:'延伸于'
+    ,extendAt:'延伸开始于'
+    ,fail:'失败'
+    ,info:'说明:<br>上传音频时长必须在6s-60s内'
+  }
+  ,video:{
+    menu:"视频",
+    menuinfo:'Luam等 视频创作',
+    descpls:'视频创作描述',
+    lumaabout:"Luma 秘钥 https://api.kingdora.com",
+    lumaserver:"Luma 接口地址",
+    setOpenKeyPlaceholder:'Luma API 的key, 同上',
+    generate:'生成视频',
+    nodata:'暂无可用视频，请先生成！',
+    selectimg:'参考图片',
+    clear:'清除',
+    plsInput:'请输入内容！',
+    submitSuccess:'已提交成功！',
+    process:'视频生成中...',
+    repeat:'重新获取',
   }
 
 
