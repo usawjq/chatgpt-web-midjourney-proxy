@@ -17,7 +17,7 @@ const save = ()=>{
 
 const voiceList= computed(()=>{
     let rz=[]; //'alloy','shimmer','echo'
-    for(let o of "alloy,echo,shimmer".split(/[ ,]+/ig))rz.push({label:o,value:o}) 
+    for(let o of "alloy,echo,shimmer".split(/[ ,]+/ig))rz.push({label:o,value:o})
     return rz;
 });
 </script>
@@ -27,7 +27,7 @@ const voiceList= computed(()=>{
             <div class="flex justify-between items-baseline ">
                 <div class="pb-1">
                 <n-switch v-model:value="gptServerStore.myData.REALTIME_IS_WHISPER" size="small" >
-                    <template #checked>whisper-1 ON </template> 
+                    <template #checked>whisper-1 ON </template>
                     <template #unchecked>whisper-1 Off</template>
                 </n-switch>
                 </div>
@@ -35,13 +35,13 @@ const voiceList= computed(()=>{
 
                 </div>
 
-            <section class="mb-4 flex justify-between items-center"  >
-                <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.OPENAI_API_BASE_URL" clearable>
-                    <template #prefix>
-                    <span class="text-[var(--n-tab-text-color-active)]">{{ $t('mj.setOpenUrl') }}:</span>
-                    </template>
-                </n-input>
-            </section>
+<!--            <section class="mb-4 flex justify-between items-center"  >-->
+<!--                <n-input @blur="blurClean"  :placeholder="$t('mj.setOpenPlaceholder') " v-model:value="gptServerStore.myData.OPENAI_API_BASE_URL" clearable>-->
+<!--                    <template #prefix>-->
+<!--                    <span class="text-[var(&#45;&#45;n-tab-text-color-active)]">{{ $t('mj.setOpenUrl') }}:</span>-->
+<!--                    </template>-->
+<!--                </n-input>-->
+<!--            </section>-->
 
             <section class="mb-4 flex justify-between items-center"  >
                 <n-input  @blur="blurClean" type="password"  :placeholder="$t('mj.setOpenKeyPlaceholder')" show-password-on="click" v-model:value="gptServerStore.myData.OPENAI_API_KEY" clearable>
@@ -58,7 +58,7 @@ const voiceList= computed(()=>{
             <section class="mb-4"  >
                 <div>{{ $t('mjchat.role') }}</div>
                 <div>
-                    <n-input  type="textarea"  :placeholder="instructions"   
+                    <n-input  type="textarea"  :placeholder="instructions"
                     v-model:value="gptServerStore.myData.REALTIME_SYSMSG" :autosize="{ minRows: 3 }"
                     />
                 </div>
