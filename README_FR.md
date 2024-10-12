@@ -5,7 +5,7 @@
 
 
 ![couverture](./docs/mj2a1.jpg)
-## Fonctionnalités prises en charge 
+## Fonctionnalités prises en charge
 - [x] Prise en charge du module Suno, ajustement des paroles et du style musical
 - [x] Toutes les fonctionnalités de chatgpt web
 - [x] chatgpt web prend en charge la personnalisation de l'API key et de base_url
@@ -51,7 +51,7 @@
 
 | Variable d'environnement | Description | Valeur par défaut | Déploiement docker | Déploiement vercel |
 | --- | --- | --- | --- | --- |
-| OPENAI_API_BASE_URL | Adresse de l'interface API OpenAI | https://api.openai.com | ✅ |  ✅|
+| OPENAI_API_BASE_URL | Adresse de l'interface API OpenAI | https://api.kingdora.com | ✅ |  ✅|
 | OPENAI_API_KEY | Clé API OpenAI |  sk-xxxxx | ✅ |  ✅|
 | OPENAI_API_MODEL |  Modèle par défaut | gpt-3.5-turbo  | ✅ |  ✅|
 | MJ_SERVER |  Adresse de l'interface mj proxy  |[Référence d'installation](https://github.com/novicezk/midjourney-proxy) | ✅ |  ✅|
@@ -82,26 +82,26 @@
 | CUSTOM_VISION_MODELS  | Modèles de vision personnalisés, séparés par des virgules |  vide | ✅ |  ✅|
 
 ## Déploiement docker
- 
-> - [x] Nécessite [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 
-> - [x] Nécessite [Suno-API](https://github.com/SunoAI-API/Suno-API) 
+
+> - [x] Nécessite [midjourney-proxy](https://github.com/novicezk/midjourney-proxy)
+> - [x] Nécessite [Suno-API](https://github.com/SunoAI-API/Suno-API)
 
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://your-mj-server:6013  \
 -e MJ_API_SECRET=your-mj-api-secret  \
 -e SUNO_SERVER=https://your-suno-server:8000  \
 -e SUNO_KEY=you-suno-key  ydlhero/chatgpt-web-midjourney-proxy
 ```
-Accédez à http://ip:6015 
+Accédez à http://ip:6015
 
-**Téléchargement de fichiers**: 
+**Téléchargement de fichiers**:
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
@@ -135,7 +135,7 @@ docker run -d --name mj6013  -p 6013:8080  \
 ### API key et base_url personnalisés en serveur:
 ![base_url](./docs/gptbase.jpg)
 
-### GPTS  GTP Store 
+### GPTS  GTP Store
 ![multi-modale](./docs/gpts.jpg)
 ![multi-modale](./docs/gpts1.jpg)
 
@@ -197,7 +197,7 @@ AUTH_SECRET_ERROR_TIME=10
 ```shell
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456 \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
@@ -222,7 +222,7 @@ Si mon projet open source vous a été utile, veuillez envisager de faire un don
         <div>Don via WeChat</div>
     </div>
     <div style="width:200px">
-        <img src="./docs/alipay.jpg"  style="width:200px"> 
+        <img src="./docs/alipay.jpg"  style="width:200px">
         <div>Don via Alipay</div>
     </div>
 </div>

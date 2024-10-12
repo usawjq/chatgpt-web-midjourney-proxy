@@ -78,4 +78,6 @@ export * from "./chat"
 export * from "./sse/fetchsse"
 export * from "./Recognition"
 export * from "./luma"
+export * from "./ideo"
+export * from "./realtime"
 

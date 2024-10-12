@@ -50,7 +50,7 @@
 
 | 환경 변수 | 설명 | 기본값 |docker 등 배포| vercel 배포|
 | --- | --- | --- | --- | --- |
-| OPENAI_API_BASE_URL | OpenAI API 인터페이스 주소 | https://api.openai.com | ✅ |  ✅|
+| OPENAI_API_BASE_URL | OpenAI API 인터페이스 주소 | https://api.kingdora.com | ✅ |  ✅|
 | OPENAI_API_KEY | OpenAI API 키 |  sk-xxxxx | ✅ |  ✅|
 | OPENAI_API_MODEL |  기본 모델 | gpt-3.5-turbo  | ✅ |  ✅|
 | MJ_SERVER |  mj 프록시 인터페이스 주소 |[구축 참고](https://github.com/novicezk/midjourney-proxy) | ✅ |  ✅|
@@ -88,19 +88,19 @@
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://your-mj-server:6013  \
 -e MJ_API_SECRET=your-mj-api-secret  \
 -e SUNO_SERVER=https://your-suno-server:8000  \
 -e SUNO_KEY=you-suno-key  ydlhero/chatgpt-web-midjourney-proxy
 ```
-접속 http://ip:6015 
+접속 http://ip:6015
 
-**파일 업로드**: 
+**파일 업로드**:
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
@@ -133,7 +133,7 @@ docker run -d --name mj6013  -p 6013:8080  \
 ### 사용자 정의 서버 API 키, base_url:
 ![base_url](./docs/gptbase.jpg)
 
-### GPTS GTP Store 
+### GPTS GTP Store
 ![다중 모드](./docs/gpts.jpg)
 ![다중 모드](./docs/gpts1.jpg)
 
@@ -193,7 +193,7 @@ AUTH_SECRET_ERROR_TIME=10
 ```shell
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456 \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
@@ -210,7 +210,7 @@ MIT © [Dooy](./license)
 [![Star History Chart](https://api.star-history.com/svg?repos=Dooy/chatgpt-web-midjourney-proxy&type=Date)](https://star-history.com/#Dooy/chatgpt-web-midjourney-proxy&Date)
 
 ## 후원
-제 오픈 소스 프로젝트가 도움이 되었다면, 아래 방법 중 하나로 후원을 고려해 주세요: 
+제 오픈 소스 프로젝트가 도움이 되었다면, 아래 방법 중 하나로 후원을 고려해 주세요:
 <br> `결제 메모에 연락처를 남겨 주세요`
 <div style="display: flex; flex-wrap: wrap">
     <div style="width:200px">
@@ -218,7 +218,7 @@ MIT © [Dooy](./license)
         <div>WeChat 후원</div>
     </div>
     <div style="width:200px">
-        <img src="./docs/alipay.jpg"  style="width:200px"> 
+        <img src="./docs/alipay.jpg"  style="width:200px">
         <div>Alipay 후원</div>
     </div>
 </div>
