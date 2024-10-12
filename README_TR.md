@@ -50,7 +50,7 @@
 
 | Ortam Değişkeni | Açıklama | Varsayılan Değer |docker gibi dağıtımlar| vercel dağıtımı|
 | --- | --- | --- | --- | --- |
-| OPENAI_API_BASE_URL | OpenAI API arayüz adresi | https://api.openai.com | ✅ |  ✅|
+| OPENAI_API_BASE_URL | OpenAI API arayüz adresi | https://api.kingdora.com | ✅ |  ✅|
 | OPENAI_API_KEY | OpenAI API anahtarı |  sk-xxxxx | ✅ |  ✅|
 | OPENAI_API_MODEL |  Varsayılan model | gpt-3.5-turbo  | ✅ |  ✅|
 | MJ_SERVER |  mj proxy arayüz adresi  |[Kurulum Referansı](https://github.com/novicezk/midjourney-proxy) | ✅ |  ✅|
@@ -89,19 +89,19 @@ MyUrl` özel link]  |  Boş | ✅ |  x|
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://your-mj-server:6013  \
 -e MJ_API_SECRET=your-mj-api-secret  \
 -e SUNO_SERVER=https://your-suno-server:8000  \
 -e SUNO_KEY=your-suno-key  ydlhero/chatgpt-web-midjourney-proxy
 ```
-Erişim http://ip:6015 
+Erişim http://ip:6015
 
-**Dosya Yükleme**: 
+**Dosya Yükleme**:
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
@@ -195,7 +195,7 @@ AUTH_SECRET_ERROR_TIME=10
 ```shell
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456 \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
@@ -219,7 +219,7 @@ Eğer açık kaynak projelerim size yardımcı olduysa, lütfen aşağıdaki yö
         <div>WeChat Bağışı</div>
     </div>
     <div style="width:200px">
-        <img src="./docs/alipay.jpg"  style="width:200px"> 
+        <img src="./docs/alipay.jpg"  style="width:200px">
         <div>Alipay Bağışı</div>
     </div>
 </div>

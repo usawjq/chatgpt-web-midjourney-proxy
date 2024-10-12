@@ -50,7 +50,7 @@
 
 | Переменная окружения | Описание | Значение по умолчанию | docker и другие развертывания | развертывание vercel |
 | --- | --- | --- | --- | --- |
-| OPENAI_API_BASE_URL | Адрес OpenAI API | https://api.openai.com | ✅ |  ✅ |
+| OPENAI_API_BASE_URL | Адрес OpenAI API | https://api.kingdora.com | ✅ |  ✅ |
 | OPENAI_API_KEY | Ключ OpenAI API | sk-xxxxx | ✅ |  ✅ |
 | OPENAI_API_MODEL | Модель по умолчанию | gpt-3.5-turbo | ✅ |  ✅ |
 | MJ_SERVER | Адрес midjourney proxy API | [Инструкция по установке](https://github.com/novicezk/midjourney-proxy) | ✅ |  ✅ |
@@ -74,7 +74,7 @@
 | CLOSE_MD_PREVIEW | Отключить предпросмотр Markdown | нет | ✅ |  ✅ |
 | UPLOAD_TYPE | Метод загрузки: [`R2` R2 загрузка], [`API` через frontend UI], [`Container` локальное], [`MyUrl` кастомный URL] | пусто | ✅ |  x |
 | MENU_DISABLE  | Отключение меню: gpts,draws,gallery,music | пусто | ✅ |  ✅ |
-| VISION_MODEL  | Модель для распознавания изображений: `gpt-4o`, `gpt-4-turb`, `gpt-4-vision-preview` | пусто | ✅ | 
+| VISION_MODEL  | Модель для распознавания изображений: `gpt-4o`, `gpt-4-turb`, `gpt-4-vision-preview` | пусто | ✅ |
 
  ✅ |
 | SYSTEM_MESSAGE  | Кастомное сообщение по умолчанию | пусто | ✅ |  ✅ |
@@ -88,7 +88,7 @@
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://your-mj-server:6013  \
 -e MJ_API_SECRET=your-mj-api-secret  \
 -e SUNO_SERVER=https://your-suno-server:8000  \
@@ -100,7 +100,7 @@ docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
@@ -133,7 +133,7 @@ docker run -d --name mj6013  -p 6013:8080  \
 ### Кастомный api key и base_url для сервера:
 ![base_url](./docs/gptbase.jpg)
 
-### GPTS  GTP Store 
+### GPTS  GTP Store
 ![многомодальность](./docs/gpts.jpg)
 ![многомодальность](./docs/gpts1.jpg)
 
@@ -193,7 +193,7 @@ AUTH_SECRET_ERROR_TIME=10
 ```shell
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456 \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
@@ -218,7 +218,7 @@ MIT © [Dooy](./license)
         <div>Пожертвование через WeChat</div>
     </div>
     <div style="width:200px">
-        <img src="./docs/alipay.jpg"  style="width:200px"> 
+        <img src="./docs/alipay.jpg"  style="width:200px">
         <div>Пожертвование через Alipay</div>
     </div>
 </div>

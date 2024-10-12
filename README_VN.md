@@ -50,7 +50,7 @@
 
 | Biến môi trường | Mô tả | Giá trị mặc định | triển khai docker| triển khai vercel|
 | --- | --- | --- | --- | --- |
-| OPENAI_API_BASE_URL | Địa chỉ API OpenAI | https://api.openai.com | ✅ |  ✅|
+| OPENAI_API_BASE_URL | Địa chỉ API OpenAI | https://api.kingdora.com | ✅ |  ✅|
 | OPENAI_API_KEY | Khóa API OpenAI |  sk-xxxxx | ✅ |  ✅|
 | OPENAI_API_MODEL |  Mô hình mặc định | gpt-3.5-turbo  | ✅ |  ✅|
 | MJ_SERVER |  Địa chỉ giao diện proxy mj  |[tham khảo cài đặt](https://github.com/novicezk/midjourney-proxy) | ✅ |  ✅|
@@ -80,7 +80,7 @@
 | SYSTEM_MESSAGE  | Tin nhắn nhân vật mặc định tùy chỉnh |  Trống | ✅ |  ✅|
 | CUSTOM_VISION_MODELS  | Mô hình nhận diện tùy chỉnh cách nhau bởi dấu phẩy |  Trống | ✅ |  ✅|
 
-  
+
 
 ## Triển khai docker
 
@@ -90,19 +90,19 @@
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://your-mj-server:6013  \
 -e MJ_API_SECRET=your-mj-api-secret  \
 -e SUNO_SERVER=https://your-suno-server:8000  \
 -e SUNO_KEY=you-suno-key  ydlhero/chatgpt-web-midjourney-proxy
 ```
-Truy cập http://ip:6015 
+Truy cập http://ip:6015
 
 **Tải lên tệp:**
 ```bash
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e MJ_API_SECRET=abc123456  ydlhero/chatgpt-web-midjourney-proxy
@@ -196,14 +196,14 @@ AUTH_SECRET_ERROR_TIME=10
 ```shell
 docker run --name chatgpt-web-midjourney-proxy  -d -p 6015:3002 \
 -e OPENAI_API_KEY=sk-xxxxx \
--e OPENAI_API_BASE_URL=https://api.openai.com  \
+-e OPENAI_API_BASE_URL=https://api.kingdora.com  \
 -e MJ_SERVER=https://172.17.0.1:6013  \
 -e MJ_API_SECRET=abc123456 \
 -e API_UPLOADER=1  -v /data/uploads:/app/uploads \
 -e AUTH_SECRET_KEY=mật khẩu tiếng Anh của bạn -e AUTH_SECRET_ERROR_COUNT=3 \
 -e AUTH_SECRET_ERROR_TIME=10 ydlhero/chatgpt-web-midjourney-proxy
 ```
-- 
+-
 ## License
 MIT © [Dooy](./license)
 
@@ -221,7 +221,7 @@ Nếu mã nguồn mở của tôi hữu ích với bạn, vui lòng xem xét ủ
         <div>Ủng hộ WeChat</div>
     </div>
     <div style="width:200px">
-        <img src="./docs/alipay.jpg"  style="width:200px"> 
+        <img src="./docs/alipay.jpg"  style="width:200px">
         <div>Ủng hộ Alipay</div>
     </div>
 </div>

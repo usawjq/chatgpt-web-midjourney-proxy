@@ -58,6 +58,7 @@ export default {
     avatarLink: 'Avatar Link',
     name: 'Tên',
     description: 'Miêu tả',
+    backgroundImage: 'Ảnh nền',
     role: 'Vai trò',
     temperature: 'Nhiệt độ',
     top_p: 'Top_p',
@@ -164,7 +165,7 @@ export default {
     "mSent": "Gửi",
     "findVersion": "Phát hiện phiên bản cập nhật",
     "yesLastVersion": "Đã là phiên bản mới nhất",
-    "infoStar": "此项使用固定API调用，请移步 <a  class=\"text-blue-600 dark:text-blue-500\" href=\"https://api.kingdora.com/register?aff=BqDo\" target=\"_blank\"> 金哆啦API中转 </a>获取token令牌，然后输入即可使用本产品</p><p>如果有问题请联系QQ 872110286，谢谢！",
+    "infoStar": "Dự án này được mở nguồn tại <a class=\"text-blue-600 dark:text-blue-500\" href=\"https://github.com/Dooy/chatgpt-web-midjourney-proxy\" target=\"_blank\">GitHub</a>, miễn phí và dựa trên giấy phép MIT mà không có bất kỳ hình thức thanh toán nào! </p><p>Nếu bạn thấy dự án này hữu ích, hãy cho nó một sao trên GitHub, cảm ơn bạn!",
     "setBtSaveChat": "Chỉ lưu trò chuyện",
     "setBtSaveSys": "Lưu vào hệ thống",
 
@@ -191,8 +192,43 @@ export default {
 
     subtle: 'Cao độ phân giải cao gấp 2 lần'
     ,creative: 'Cao độ phân giải cao gấp 2 lần. Sáng tạo'
-    ,gpt_gx: 'GPTs sử dụng g-*'
+    ,gpt_gx: 'GPTs sử dụng g-*',
 
+     "ideoabout": "Về Ideogram",
+    "ideoserver": "Máy chủ Ideogram",
+    "ideokeyPlaceholder": "Khóa API cho Ideogram (tùy chọn)",
+    "ideopls": "Gợi ý mô tả hình ảnh",
+    "nohead": "Không bao gồm",
+
+    klingabout: 'Liên quan đến Kling',
+    klingserver: 'Địa chỉ API Kling',
+    klingkeyPlaceholder: 'API Key Kling (tùy chọn)',
+    klingkey: 'Khóa Kling',
+    mode: 'Chế độ',
+    duration: 'Thời gian',
+    negative_prompt: 'Đặt văn bản không có đối tượng ở đây',
+    std: 'Hiệu suất cao',
+    pro: 'Chất lượng cao',
+    needImg: 'Vui lòng tải lên hình ảnh tham khảo để nó có hiệu lực!',
+    seed: 'Số hạt 1~2147483647',
+    klingInfo: 'Mô tả: <li>1. Chất lượng cao gấp 3,5 lần giá</li> <li>2. 10 giây gấp 2 lần giá</li> <li>3. Khung cuối cùng phải có hình ảnh tham khảo để có hiệu lực</li>'
+
+    ,"camera_type": "Ống kính",
+    "cnull": "Ghép thông minh",
+    "down_back": "Di chuyển xuống và thu nhỏ",
+    "forward_up": "Đẩy tới và di chuyển lên",
+    "right_turn_forward": "Quay phải và đẩy tới",
+    "left_turn_forward": "Quay trái và đẩy tới"
+    ,kling:'Kling'
+    ,rttab: 'Giọng nói',
+    rtinfo: 'Dịch vụ hội thoại giọng nói thời gian thực (realtime)',
+    rtsetting: 'Vui lòng thiết lập máy chủ. Hiện tại, Realtime chỉ hỗ trợ dịch vụ từ xa; nếu cần dịch vụ cục bộ, vui lòng liên hệ với tác giả.',
+    rjcloded: 'Kết nối đã bị ngắt',
+    checkkey: 'Vui lòng kiểm tra xem API key có chính xác không',
+    rtsuccess: 'Kết nối bình thường, duy trì cuộc gọi',
+    rtservererror: 'Lỗi kết nối máy chủ WebSocket!',
+    rtservererror2: 'Không hỗ trợ ghi âm, có thể do thiết bị!',
+    rtconecting: 'Đang kết nối đến máy chủ'
   },
   "mjset": {
     "server": "Máy chủ",
@@ -357,6 +393,7 @@ export default {
 		},
 		versionList: {
 			mjV6: "MJ V6",
+			mjV61: "MJ V6.1",
 			mjV52: "MJ V5.2",
 			mjV51: "MJ V5.1",
 			nijiV6: "Niji V6",
@@ -412,9 +449,9 @@ export default {
    }
    ,video:{
     "menu": "Video",
-    "menuinfo": "Tạo video Luam và các video khác",
+    "menuinfo": "Tạo video Luma và các video khác",
     "descpls": "Mô tả tạo video",
-    "lumaabout": "Luma 秘钥 https://api.kingdora.com",
+    "lumaabout": "Về Luma",
     "lumaserver": "Địa chỉ API Luma",
     "setOpenKeyPlaceholder": "Khóa API Luma, không bắt buộc",
     "generate": "Tạo video",
@@ -424,7 +461,41 @@ export default {
     "plsInput": "Vui lòng nhập nội dung!",
     "submitSuccess": "Đã gửi thành công!",
     "process": "Đang tạo video...",
-    "repeat": "Thử lại"
+    "repeat": "Thử lại",
+
+    "lumainfo": "Giải thích: <ul><li>1. Video demo Pro và relax có liên kết có watermark.</li><li>2. Phiên bản Pro không có watermark cần phải lấy liên kết tải xuống qua nút 'Tải về'.</li><li>3. Các liên kết phiên bản Pro có thời hạn; vui lòng lưu trữ tập tin MP4 vào máy cục bộ kịp thời.</li><li>4. Đối với phiên bản Pro, lưu tập tin MP4 vào máy cục bộ trong vòng 30 phút sau khi tạo ra, vì kênh có thể bị chặn hoặc ngừng hoạt động.</li><li>5. Nếu liên kết tải xuống cho phiên bản Pro không hợp lệ, sẽ cung cấp liên kết video có watermark.</li></ul>",
+    "runwayabout": "Liên quan đến Runway",
+    "runwayserver": "Địa chỉ API Runway",
+    "setOpenKeyPlaceholder2": "Khóa API Runway, không bắt buộc",
+    "endImg": "Hình cuối",
+    "runwayinfo": "Giải thích: <ul><li>1. Các hình ảnh và video của Runway có thời hạn.</li><li>2. Vui lòng lưu trữ tập tin MP4 vào máy cục bộ trong vòng 30 phút sau khi tạo video.</li></ul>",
+    "nosup": "Tạm thời không hỗ trợ",
+    "rwgen2": "Phiên bản: Gen-2, hiệu quả chi phí",
+    "rwgen3": "Phiên bản: Gen-3 Alpha",
+    "repeat2":"Expired.Reget"
+
   }
+  ,dance:{
+    menu: "Nhảy múa",
+    menuinfo: "Tạo video nhảy múa với Viggle và các dịch vụ khác.",
+    character: "Nhân vật", 
+    viggleabout: "Thông tin về Viggle",
+    viggleserver: "Địa chỉ API của Viggle",
+    setOpenKeyPlaceholder: "Khóa API của Viggle, không bắt buộc",
+    info: "Hướng dẫn:<br>1. Hình ảnh nhân vật nên là ảnh toàn thân.<br>2. Video mẫu nhảy múa nên là video cá nhân, không phải là nhóm nhảy.",
+    model: "Mẫu",
+    bgw: "Nền trắng",
+    bgg: "Nền xanh lá",
+    bgmoban: "Nền mẫu",
+    bgrole: "Nền nhân vật",
+    gring: "Đang tạo...",
+    uprolefirst: "Vui lòng tải ảnh nhân vật lên trước",
+    uprolefail: "Tải lên thất bại",
+    upvideo: "+ Tải lên Video mẫu nhảy múa",
+    usevideo: "+ Sử dụng Mẫu chính thức",
+    moban: "Mẫu nhảy múa",
+    moban2: "Tên mẫu",
+    use: "Sử dụng"
+}
 
 }
