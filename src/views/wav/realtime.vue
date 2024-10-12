@@ -12,11 +12,11 @@ import { ItemType } from '@openai/realtime-api-beta/dist/lib/client.js';
 import { useMessage ,NModal,NButton} from 'naive-ui';
 import { gptServerStore } from '@/store';
 import { t } from '@/locales';
-const wavRecorderRef=  ref<WavRecorder>( new  WavRecorder({ sampleRate: 24000 })) 
-const wavStreamPlayerRef=  ref<WavStreamPlayer>( new WavStreamPlayer({ sampleRate: 24000 })) 
+const wavRecorderRef=  ref<WavRecorder>( new  WavRecorder({ sampleRate: 24000 }))
+const wavStreamPlayerRef=  ref<WavStreamPlayer>( new WavStreamPlayer({ sampleRate: 24000 }))
 const clientCanvasRef = ref<HTMLCanvasElement|null>(null);
 const serverCanvasRef = ref<HTMLCanvasElement|null>(null);
-const items= ref<ItemType[]>([]); 
+const items= ref<ItemType[]>([]);
 const realtimeEvents= ref<RealtimeEvent[]>([]);
 const clientRef= ref<RealtimeClient>();
 const ms= useMessage();
@@ -24,8 +24,8 @@ const st= ref({apikey:'', isConnect:false,baseUrl:'',isRealtime:true,msg:'Waitin
 const edmit= defineEmits(['close'])
 
 watch( ()=> wavRecorderRef.value,() => {
-    const wavRecorder= wavRecorderRef.value;  
-    
+    const wavRecorder= wavRecorderRef.value;
+
         const clientCanvas = clientCanvasRef.value;
         const wavStreamPlayer = wavStreamPlayerRef.value;
         let clientCtx: CanvasRenderingContext2D | null = null;
@@ -65,7 +65,7 @@ watch( ()=> wavRecorderRef.value,() => {
             const result = wavStreamPlayer.analyser
               ? wavStreamPlayer.getFrequencies('voice')
               : { values: new Float32Array([0]) };
-             
+
             WavRenderer.drawBars(
               serverCanvas,
               serverCtx,
@@ -87,23 +87,23 @@ const go= async()=>{
         ms.info("isConnect yes!");
         return;
     }
-    
+
     if(!clientRef.value || !st.value.isConnect ){
         if(!st.value.apikey){
-            
+
             ms.error("api key is null");
             return;
         }
-        if(!st.value.baseUrl){ 
+        if(!st.value.baseUrl){
             ms.error("baseUrl is null");
             return;
         }
-        clientRef.value= new RealtimeClient( { 
+        clientRef.value= new RealtimeClient( {
             apiKey:st.value.apikey,
             dangerouslyAllowAPIKeyInBrowser: true,
             baseUrl: st.value.baseUrl,
-            
-            
+
+
           }
         )
     }
@@ -111,23 +111,23 @@ const go= async()=>{
     const client= clientRef.value
     const wavRecorder= wavRecorderRef.value
     const wavStreamPlayer= wavStreamPlayerRef.value
-   
+
     try{
     // Connect to microphone
         await wavRecorder.begin();
     }catch(e){
-        st.value.msg=t('mj.rtservererror2') 
+        st.value.msg=t('mj.rtservererror2')
         ms.error(st.value.msg);
-        return 
+        return
     }
     // Connect to realtime API
     try{
-        await client.connect(); 
+        await client.connect();
     }catch(e ){
         st.value.msg= t('mj.rtservererror')
         ms.error( st.value.msg);
 
-        return 
+        return
     }
 
     // Connect to audio output
@@ -141,15 +141,15 @@ const go= async()=>{
         text: `hello`,
       },
     ]);
-    
+
 
     client.updateSession({
       turn_detection:  { type: 'server_vad' },
     });
-    
+
 
     await wavRecorder.record((data: { mono: Int16Array | ArrayBuffer; }) => {
-        try{ 
+        try{
             client.appendInputAudio(data.mono)
             st.value.msg=  t('mj.rtsuccess')
         }catch(e){
@@ -192,7 +192,7 @@ const myListen=()=>{
         return
     }
     // Set instructions
-    client.updateSession({ 
+    client.updateSession({
         instructions:  gptServerStore.myData.REALTIME_SYSMSG?  gptServerStore.myData.REALTIME_SYSMSG: instructions,
      });
 
@@ -316,7 +316,7 @@ const setItems=(iitems: ItemType[])=>{
     items.value=iitems
 }
 const setMemoryKv=(kv: { [key: string]: any }) => {
-    
+
 }
 const setRealtimeEvents=(realtimeEvent: RealtimeEvent )=>{
      //mlog("setRealtimeEvents", realtimeEvent.event ,  realtimeEvent  )
@@ -324,7 +324,7 @@ const setRealtimeEvents=(realtimeEvent: RealtimeEvent )=>{
      if(ev.type=="error" && ev.error && ev.error.message){
         ms.error(ev.error.message)
      }
-    
+
       const lastEvent =  realtimeEvents.value[ realtimeEvents.value.length - 1];
         if (lastEvent?.event.type === realtimeEvent.event.type) {
           // if we receive multiple events in a row, aggregate them for display purposes
@@ -335,8 +335,9 @@ const setRealtimeEvents=(realtimeEvent: RealtimeEvent )=>{
         }
 }
 const loadConfig=()=>{
-    let base=gptServerStore.myData.OPENAI_API_BASE_URL;
-    const key=gptServerStore.myData.OPENAI_API_KEY;
+    // let base=gptServerStore.myData.OPENAI_API_BASE_URL;
+	let base = 'https://api.kingdora.com';
+	const key=gptServerStore.myData.OPENAI_API_KEY;
     st.value.apikey=key
     if(base){
         base= base.replaceAll('https://','wss://').replaceAll('http://','ws://')
@@ -347,9 +348,9 @@ const loadConfig=()=>{
         go()
     }
 }
-   
- 
-onMounted(()=>{ 
+
+
+onMounted(()=>{
     loadConfig();
 })
 const close=()=>{
@@ -357,15 +358,15 @@ const close=()=>{
     try {
       disconnectConversation();
     } catch (error) {
-        
+
     }
 
     //edmit('close')
     setTimeout(() => {
         edmit('close')
     }, 1000);
-    
-   
+
+
 }
 </script>
 <template>
@@ -377,7 +378,7 @@ const close=()=>{
         </div>
         <div class="absolute top-0 right-0">
                 <canvas ref="serverCanvasRef" class="h-[var(--vh)]  w-[var(--vw)] " style="transform: rotate(-90deg); transform-origin: var(--vw) var(--vh);  "/>
-        </div> 
+        </div>
 
         <div class="flex flex-col justify-around items-center w-full h-full">
             <section>
@@ -385,7 +386,7 @@ const close=()=>{
                 <div v-if="!st.apikey||!st.baseUrl">
                     <div v-html="$t('mj.rtsetting')" class="p-5 text-center"> </div>
                     <div class="text-center">
-                        <NButton type="primary" @click="st.showSetting=true">{{ $t('setting.setting') }} </NButton> 
+                        <NButton type="primary" @click="st.showSetting=true">{{ $t('setting.setting') }} </NButton>
                     </div>
                 </div>
                 <an_main v-else-if="clientRef?.isConnected"/>
@@ -410,11 +411,11 @@ const close=()=>{
                         <div class=" bg-white rounded-full p-2"><SvgIcon icon="ri:wechat-line" class="text-3xl text-orange-500/75"></SvgIcon></div>
                         <div class="pt-1">{{ $t('mj.mStart') }}</div>
                     </div>
-                    
+
                 </div>
                 <div class="text-[12px] pt-5 text-center">
                     {{ st.msg }}
-                    
+
                 </div>
             </section>
         </div>
@@ -453,7 +454,7 @@ const close=()=>{
 }
 
 
-  
+
 @keyframes scale-in-tr {
   0% {
     -webkit-transform: scale(0);
@@ -482,11 +483,11 @@ const close=()=>{
 }
 
 .scale-in-tr {
-    
+
 	-webkit-animation: scale-in-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: scale-in-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
- 
+
 @keyframes scale-out-tr {
   0% {
     -webkit-transform: scale(1);
